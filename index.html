@@ -6,6 +6,8 @@
   <title>Portfolio | Fullstack Developer</title>
   <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&amp;family=M+PLUS+1p:wght@400;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
         * {
             margin: 0;
@@ -186,12 +188,43 @@
             z-index: 10;
             position: relative;
         }
-         .section-content1 {
-            max-width: 1000px;
-            z-index: 10;
-            position: relative;
-            left: 300px;
+        .section-content1{
+        max-width:1300px;
+        width:100%;
+        margin:auto;
         }
+        .about-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 70px;
+            width: 100%;
+        }
+
+.about-image img{
+    width: 350px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid #d4af37;
+    box-shadow: 0 0 25px rgba(212,175,55,0.4);
+}
+
+.about-content{
+    flex: 1;
+}
+
+@media(max-width:900px){
+    .about-container{
+        flex-direction: column;
+        text-align:center;
+    }
+
+    .about-image img{
+        width:250px;
+        height:300px;
+    }
+}
 
 
         .section h2 {
@@ -243,35 +276,45 @@
             line-height: 1.7;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
+       .skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 30px 15px;   /* row gap 30px, column gap 15px */
+    justify-items: center;
+    align-items: center;
+    margin: 30px 0;
+}
 
-        .skill-box {
-            background: rgba(212, 175, 55, 0.1);
-            border: 2px solid #d4af37;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+.skill-box{
+    background:none;
+    border:none;
+    box-shadow:none;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition:transform .3s ease;
+}
 
-        .skill-box:hover {
-            background: rgba(212, 175, 55, 0.2);
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-        }
+.skill-box:hover{
+    transform:scale(1.1);
+}
 
-        .skill-box strong {
-            color: #d4af37;
-            font-family: 'M PLUS 1p', sans-serif;
-            font-size: 18px;
-            display: block;
-        }
+.skill-icon{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    margin-bottom:12px;
+}
 
+.skill-name{
+    color:#ffffff;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+}
+        
         /* ===== ACHIEVEMENTS GRID (CERTIFICATE STYLE) ===== */
 
         .achievements-grid {
@@ -328,20 +371,17 @@
             }
         }
 /* contact */
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 4px; /* Optional */
+        }
+
         .contact-link {
-            display: inline-flex;
-            gap: 15px;
+            display: flex;
             align-items: center;
-            padding: 15px 25px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 2px solid #d4af37;
-            border-radius: 6px;
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 10px 10px 10px 0;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            gap: 10px;
         }
 
         .contact-link:hover {
@@ -349,6 +389,7 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
         }
+
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -503,65 +544,112 @@
     </div>
    </div><!-- ABOUT SECTION -->
    <section class="section section-about" id="about">
-    <div class="section-content1">
-     <h2>About Me</h2>
-     <div class="card">
-      <h3 id="about-text" style="color: white">An enthusiastic and proactive individual with a strong passion for learning and self-improvement. I aim to apply my critical thinking skills, collaborate effectively with others, and contribute to meaningful projects while continuously developing my knowledge and abilities.</h3>
-     </div>
-     <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-      <div class="card">
-       <h3 style="font-weight:bold;">GitHub</h3>
-       <p style="font-size: 25px; color: white ">padma-jaa</p>
-      </div>
-      <div class="card">
-       <h3 style="font-weight:bold;">LinkedIn</h3>
-       <p style="font-size:20px; color: white">Padmajaa Paranthaman</p>
-      </div>
-      <div class="card">
-       <h3 style="font-weight:bold;">Email ID</h3>
-       <p style="font-size: 25px; color: white">padmajaaparanthaman2005@gmail.com</p>
-      </div>
-     </div>
+
+    <div class="about-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="about-image">
+            <img src="images/profile_photo.jpg" alt="Padmajaa">
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-content">
+
+            <h2>About Me</h2>
+
+            <div class="card">
+                <h3 style="color:white">
+                    An enthusiastic and proactive individual with a strong passion for learning and self-improvement. I aim to apply my critical thinking skills, collaborate effectively with others, and contribute to meaningful projects while continuously developing my knowledge and abilities.
+                </h3>
+            </div>
+
+            <div style="margin-top:30px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+
+                <div class="card">
+                    <h3>GitHub</h3>
+                    <p style="font-size:25px;color:white;">padma-jaa</p>
+                </div>
+
+                <div class="card">
+                    <h3>LinkedIn</h3>
+                    <p style="font-size:20px;color:white;">Padmajaa Paranthaman</p>
+                </div>
+
+                <div class="card">
+                    <h3>Email ID</h3>
+                    <p style="font-size:20px;color:white;">
+                        padmajaaparanthaman2005@gmail.com
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-   </section><!-- SKILLS SECTION -->
+
+</section><!-- SKILLS SECTION -->
    <section class="section section-skills" id="skills">
     <div class="section-content">
-     <h2 >Technical Skills</h2>
-     <h3 style="color: #d4af37; margin-top: 30px; text-align: center; font-size: 35px; font-weight:bold;">Frontend</h3>
-     <div class="skills-grid">
-      <div class="skill-box">
-       <strong >HTML</strong>
-      </div>
-      <div class="skill-box">
-       <strong>CSS</strong>
-      </div>
-      <div class="skill-box">
-       <strong>Javascript</strong>
-      </div>
-      <div class="skill-box">
-       <strong>Figma</strong>
-      </div>
-      <div class="skill-box">
-       <strong>React</strong>
-      </div>
-     </div>
-     <h3 style="color: #d4af37; margin-top: 40px; text-align: center; font-size: 35px; font-weight:bold;">Backend</h3>
-     <div class="skills-grid">
-      <div class="skill-box">
-       <strong>Java</strong>
-      </div>
-      <div class="skill-box">
-       <strong>Python</strong>
-      </div>
-     </div>
-     <h3 style ="color: #d4af37; margin-top: 40px; text-align: center; font-size: 35px; font-weight:bold;" >Database</h3>
-      <div class="skills-grid">
-      <div class="skill-box">
-       <strong>mysql</strong>
-      </div>
-     </div>
+
+        <h2>Technical Skills</h2>
+
+        <!-- Frontend -->
+        <h3 style="color:#d4af37;text-align:center;font-size:35px;margin-top:30px;">Frontend</h3>
+        <div class="skills-grid">
+            <div class="skill-box"><img src="https://clipartcraft.com/images/html5-logo-png-transparent-5.png" alt="HTML" class="skill-icon"> <p class="skill-name">HTML</p></div>
+
+            <div class="skill-box"><img src="https://toppng.com/uploads/preview/css3-logo-vector-download-11573943110ujyqmvcq4d.png" alt="CSS" class="skill-icon"> <p class="skill-name">CSS</p></div>
+
+            <div class="skill-box"><img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" alt="JavaScript" class="skill-icon"> <p class="skill-name">Javascript</p></div>
+
+            <div class="skill-box"><img src="https://tse1.explicit.bing.net/th/id/OIP.Z52lPAWpDO4yvculRWD1PgHaE5?r=0&w=725&h=479&rs=1&pid=ImgDetMain&o=7&rm=3" alt="React" class="skill-icon"> <p class="skill-name">React</p></div>
+        </div>
+
+        <!-- Backend -->
+        <h3 style="color:#d4af37;text-align:center;font-size:35px;margin-top:40px;">Backend</h3>
+        <div class="skills-grid">
+            <div class="skill-box"><img src="https://tse1.mm.bing.net/th/id/OIP.YOfpCVX2AtqSI36DrQ6ySgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Java" class="skill-icon"> <p class="skill-name">Java</p></div>
+
+            <div class="skill-box"><img src="https://img.icons8.com/color/1200/python--v2.jpg" alt="Python" class="skill-icon"> <p class="skill-name">Python</p></div>
+        </div>
+
+        <!-- Database -->
+        <h3 style="color:#d4af37;text-align:center;font-size:35px;margin-top:40px;">Database</h3>
+        <div class="skills-grid">
+            <div class="skill-box"><img src="https://toppng.com/uploads/preview/mysql-logo-transparent-11660514439mzkqg8ixwn.png" alt="MySQL" class="skill-icon"> <p class="skill-name">Mysql</p></div>
+        </div>
+
+        <!-- Testing -->
+        <h3 style="color:#d4af37;text-align:center;font-size:35px;margin-top:40px;">Testing & QA</h3>
+        <div class="skills-grid">
+            <div class="skill-box"><img src="https://www.svgrepo.com/show/354202/postman-icon.svg" alt="Postman" class="skill-icon"> <p class="skill-name">Postman</p></div>
+
+            <div class="skill-box"><img src="https://miro.medium.com/v2/resize:fit:1358/0*zPPO9n9N_ugjvt4l.png" alt="Playwright" class="skill-icon"> <p class="skill-name">Playwright</p></div>
+
+            <div class="skill-box"><img src="https://blog.belajarkode.id/posts/2025/02/automation-with-pytest/pytest-logo.png" alt="Pytest" class="skill-icon"></div>
+        </div>
+
+        <!-- DevOps -->
+        <h3 style="color:#d4af37;text-align:center;font-size:35px;margin-top:40px;">DevOps & Version Control</h3>
+        <div class="skills-grid">
+            <div class="skill-box"><img src="https://static.vecteezy.com/system/resources/previews/025/270/403/original/github-logo-icon-free-vector.jpg" alt="GitHub" class="skill-icon"> <p class="skill-name">GitHub</p></div>
+
+            <div class="skill-box"><img src="https://freepngdesign.com/content/uploads/images/bitbucket-icon-8885.png" alt="Bitbucket" class="skill-icon"> <p class="skill-name">Bitbucket</p></div>
+
+            <div class="skill-box"><img src="https://webhostinggeeks.com/blog/wp-content/uploads/2023/05/Nginx_server.png" alt="Nginx" class="skill-icon"> <p class="skill-name">Nginx</p></div>
+        </div>
+
+        <!-- AI -->
+        <h3 style="color:#d4af37;text-align:center;font-size:35px;margin-top:40px;">AI & Machine Learning</h3>
+        <div class="skills-grid">
+            <div class="skill-box"><img src="https://static.vecteezy.com/system/resources/previews/021/347/045/non_2x/artificial-intelligence-icon-design-free-vector.jpg" alt="Artificial Intelligence" class="skill-icon"> <p class="skill-name">Artificial Intelligence</p></div>
+
+            <div class="skill-box"><img src="https://c8.alamy.com/comp/W1GT2D/machine-learning-icon-symbol-creative-sign-from-crm-icons-collection-filled-flat-machine-learning-icon-for-computer-and-mobile-W1GT2D.jpg" alt="Machine Learning" class="skill-icon"></div>
+        </div>
+
     </div>
-   </section>
+</section>
    <!-- PROJECTS SECTION -->
   <section class="section section-projects" id="projects">
     <div class="section-content2">
@@ -694,12 +782,51 @@ Integrated IoT (ESP8266/Arduino) for secure data capture and QR-based verificati
 <!-- CONTACT SECTION -->
    <section class="section section-contact" id="contact">
     <div class="section-content">
-     <h2>Get In Touch</h2>
-     <p style="text-align: center; margin-bottom: 40px;">I'm always interested in hearing about new projects and opportunities.</p>
-     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;"><a href="mailto:" class="contact-link"> <span>📧</span> <span id="email-text">padmajaaparanthaman2005@gmail.com</span> </a>  <a href="https://github.com/padma-jaa" target="_blank" rel="noopener noreferrer" class="contact-link"> <span>💻</span> <span id="github-text">GitHub</span> </a> <a href="http://www.linkedin.com/in/padmajaa-paranthaman-3b847a2b7" target="_blank" rel="noopener noreferrer" class="contact-link"> <span>🔗</span> <span id="linkedin-text">LinkedIn</span> </a>
-     </div>
+        <h2>Get In Touch</h2>
+
+        <p style="text-align:center; margin-bottom:40px;">
+            I'm always interested in hearing about new projects and opportunities.
+        </p>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
+
+
+            <!-- GitHub -->
+            <a href="https://github.com/padma-jaa"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+                <img src="https://static.vecteezy.com/system/resources/previews/025/270/403/original/github-logo-icon-free-vector.jpg"
+                     alt="GitHub"
+                     class="contact-icon">
+                <span id="github-text">GitHub</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/padmajaap/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/linkedin-icon-logo-png-transparent.png"
+                     alt="LinkedIn"
+                     class="contact-icon">
+                <span id="linkedin-text">LinkedIn</span>
+            </a>
+
+            <!-- LeetCode -->
+            <a href="https://leetcode.com/u/PadmajaaP/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+                <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/leetcode.webp"
+                     alt="LeetCode"
+                     class="contact-icon">
+                <span>LeetCode</span>
+            </a>
+
+        </div>
     </div>
-   </section>
+</section>
   </div>
   <script>
         const defaultConfig = {
